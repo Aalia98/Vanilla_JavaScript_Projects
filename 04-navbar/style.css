@@ -1,0 +1,139 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #E1FFEE;
+    font-family: 'Poppins', sans-serif;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 100%;
+    height: auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.logo h1 {
+    display: flex;
+    gap: 5px;
+    color: #212121;
+    background-color:#FFFFFF;
+    text-shadow: 1px 2px 2px;
+    letter-spacing: 3px;
+}
+
+.logo h1 span {
+    margin-left: 8px;
+    color: #189ad3;
+}
+
+.menu {
+    display: flex;
+    gap: 15px;
+    letter-spacing: 5px;
+    color: #414141;
+}
+
+.menu a {
+    text-decoration: none;
+    color: #414141;
+}
+
+#home:hover, #about:hover, #projects:hover, #contact:hover {
+    cursor: pointer;
+    color: #189ad3;
+    background-color: none; 
+}
+
+.connections {
+    display: flex;
+    gap: 20px;
+}
+
+.menu-bar {
+    display: none;
+    width: 30px;
+    height: 25px;
+    position: fixed;
+    right: 20px;
+}
+
+.menu-bar:hover {
+    cursor: pointer;
+    animation: vertical-move .5s;
+    animation-fill-mode: forwards;
+}
+
+.line {
+    background-color: #189ad3;
+    width: 24px;
+    height: 4px;
+    margin: 2px;
+    border-radius: 3px;
+}
+
+@keyframes vertical-move{
+    to {
+        rotate: 90deg;
+    }
+    from {
+        rotate: 0deg;
+    }
+}
+
+@media (max-width:800px){
+    .container {
+        justify-content: space-between;
+        padding: 0 0 20px 0;
+    }
+
+    .logo h1 {
+        padding: 20px 0 0 20px;
+        gap: 0;
+    }
+    .menu {
+        display: none;
+        gap: 0;
+    }
+
+    #home, #about, #projects, #contact {
+        padding: 10px 20px;
+    }
+
+    #home:hover, #about:hover, #projects:hover, #contact:hover {
+        cursor: pointer;
+        color: #189ad3;
+        background-color: #89CFF3;
+        display: inline block;
+        animation: hoverLeft .5s;
+        animation-fill-mode: forwards;
+    }
+
+    .connections {
+        display: none;
+    }
+
+    .menu-bar {
+        display: flex;
+        flex-direction: column;
+        margin-top: 20px;
+    }
+
+    @keyframes hoverLeft {
+        from {
+            padding-left: 20px;
+        }
+        to  {
+            padding-left: 30px;
+        }
+    }
+}

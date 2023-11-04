@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <title>Sidebar</title>
+  </head>
+  <body>
+    <aside class="container">
+      <header>
+        <div class="logo">
+          <h1>Coding <span>Addict</span></h1>
+        </div>
+        <span class="material-symbols-outlined">
+            close
+        </span>
+      </header>
+      <main>
+        <div class="menu">
+          <a href="/" target="_self"><h4 id="home">Home</h4></a>
+          <a href="/about" target="_blank"><h4 id="about">About</h4></a>
+          <a href="/projects" target="_blank"
+            ><h4 id="projects">Projects</h4></a
+          >
+          <a href="/contact" target="_blank"><h4 id="contact">Contact</h4></a>
+        </div>
+      </main>
+      <footer>
+        <div class="connections">
+          <a
+            href="http://facebook.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            ><img src="./images/facebook.png" alt="facebook"
+          /></a>
+          <a
+            href="http://linkedin.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            ><img src="./images/linkedin.png" alt="linkedin"
+          /></a>
+          <a href="http://twitter.com" target="_blank" rel="noopener noreferrer"
+            ><img src="./images/twitter.png" alt="twitter"
+          /></a>
+          <a href="http://" target="_blank" rel="noopener noreferrer"
+            ><img src="./images/diamond.png" alt="diamond"
+          /></a>
+        </div>
+      </footer>
+    </aside>
+    <div class="menu-bar">
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+    </div>
+  </body>
+  <script>
+    let isClicked = true
+    var x = window.matchMedia("(max-width: 680px)");
+    const menu = document.querySelector(".menu-bar");
+    
+    menu.addEventListener("click", function () {
+        if(isClicked) {
+          document.querySelector(".container").style.display = "flex"
+          if(x.matches) {
+            document.querySelector(".container").style.width = "100%";
+          } else {
+            document.querySelector(".container").style.width = "400px"
+          }
+            isClicked = false
+        } else {
+            document.querySelector(".container").style.width = "0px"
+            isClicked = true
+        }
+    });
+
+    const close = document.querySelector(".material-symbols-outlined")
+    close.addEventListener("click", function() {
+        document.querySelector(".container").style.width = "0px"
+    })
+  </script>
+</html>
